@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_null_aware_operators
+
 import 'package:argaam_task/src/features/home/models/weather_type_model.dart';
 import 'package:equatable/equatable.dart';
 

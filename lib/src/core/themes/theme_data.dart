@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +19,7 @@ class ThemeConfig {
   }
 
   static ColorScheme colorSchemeFromSeed =
-      ColorScheme.fromSeed(seedColor:  Colors.orange);
+      ColorScheme.fromSeed(seedColor: Colors.orange);
 
   static ThemeData themeFromSeed() => ThemeData.from(
       colorScheme: colorSchemeFromSeed,

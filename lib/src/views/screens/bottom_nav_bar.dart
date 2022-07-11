@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 
 import '../../features/city/screens/search_screen.dart';
@@ -21,7 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
 
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    const HomeScreen(),
     SearchScreen(),
   ];
 
@@ -92,7 +94,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Map<String, WidgetBuilder> _routeBuilders(BuildContext context, int index) {
     return {
       '/bottomNavBar': (context) {
-        return [HomeScreen(), SearchScreen()].elementAt(index);
+        return [const HomeScreen(), SearchScreen()].elementAt(index);
       },
     };
   }

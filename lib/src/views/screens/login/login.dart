@@ -1,16 +1,32 @@
-import 'package:argaam_task/src/app.dart';
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names
+
 import 'package:argaam_task/src/core/components/components.dart';
 import 'package:argaam_task/src/views/screens/bottom_nav_bar.dart';
+import 'package:argaam_task/src/views/screens/login/notification.dart';
 import 'package:argaam_task/src/views/screens/register/register.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginScreen extends StatelessWidget {
+import 'package:timezone/data/latest.dart' as tz;
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() {
+    super.initState();
+    tz.initializeTimeZones();
+  }
+
   var EmailController = TextEditingController();
-  var passwordController = TextEditingController();
-  var formKey = GlobalKey<FormState>();
 
-  LoginScreen({Key? key}) : super(key: key);
+  var passwordController = TextEditingController();
+
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +91,13 @@ class LoginScreen extends StatelessWidget {
                   ),
                   defaultButton(
                     function: () {
+                      // notifiction calling
+                      NotificationApi().showNotification(1, "Agraam",
+                          "Haay ! Welcome in argaam app thank you ", 10);
+                      // NotificationApi.showNotification(
+                      //     title: 'Agraam',
+                      //     body: 'Haay ! Welcome in argaam app thank you ',
+                      //     payload: 'agraam.com');
                       NavigateAndFinish(context, BottomNavBar());
                     },
                     text: 'Sign In',

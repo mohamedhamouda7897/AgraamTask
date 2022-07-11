@@ -3,7 +3,6 @@
 import 'package:argaam_task/src/core/components/components.dart';
 import 'package:argaam_task/src/views/screens/login/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterScreen extends StatelessWidget {
   var nameController = TextEditingController();
@@ -94,7 +93,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   defaultButton(
                     function: () {
-                      NavigateAndFinish(context, LoginScreen());
+                      NavigateAndFinish(context, const LoginScreen());
                       showToast(
                           message: 'Account Created',
                           toastStates: ToastStates.SUCCESS);
@@ -112,7 +111,7 @@ class RegisterScreen extends StatelessWidget {
                       const Text('Have An Account?'),
                       defaultTextButton(
                           function: () {
-                            NavigateTo(context, LoginScreen());
+                            NavigateTo(context, const LoginScreen());
                           },
                           text: 'Sign in')
                     ],

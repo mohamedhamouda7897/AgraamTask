@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 part of 'home_bloc.dart';
 
 abstract class HomeState extends Equatable {
